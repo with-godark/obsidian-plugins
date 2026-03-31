@@ -1,12 +1,29 @@
 .theme-dark {
-  --background-primary: #171515;
-  --background-secondary: #221f1f;
-  --background-secondary-alt: #2c2828;
-  --background-modifier-border: #4e4642;
-  --interactive-accent: #d48452;
-  --interactive-accent-hover: #e4a06b;
-  --text-normal: #f3ede6;
-  --text-muted: #b8aea5;
-  --titlebar-background: #1c1818;
-  --titlebar-background-focused: #221f1f;
+  --background-primary: #090d12;
+  --background-primary-alt: #0e121a;
+  --background-secondary: #111727;
+  --background-secondary-alt: #161d31;
+  --background-modifier-border: #2d3750;
+  --background-modifier-border-hover: #ff41c6;
+  --background-modifier-border-focus: #1ff2ff;
+
+  --interactive-accent: #1ff2ff;
+  --interactive-accent-hover: #65f7ff;
+
+  --text-normal: #e6f7ff;
+  --text-muted: #86a0bf;
+  --text-faint: #5c6f87;
+  --text-accent: #1ff2ff;
+  --text-accent-hover: #ff41c6;
+  --text-on-accent: #041016;
+
+  --titlebar-background: #080c14;
+  --titlebar-background-focused: #111727;
+  --titlebar-text-color: #d7f4ff;
+
+  --blockquote-border-color: #ff41c6;
+  --code-normal: #9be8ff;
+  --code-comment: #68839f;
+  --link-external-color: #ff75dd;
+  --table-border-color: #2d3750;
 }

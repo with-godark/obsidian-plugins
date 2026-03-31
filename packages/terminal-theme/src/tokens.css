@@ -1,10 +1,41 @@
 body {
-  --font-text-theme: 'Iowan Old Style', 'Palatino Linotype', serif;
-  --font-interface-theme: 'Avenir Next', 'Segoe UI', sans-serif;
-  --radius-s: 4px;
-  --radius-m: 8px;
-  --radius-l: 12px;
+  --font-text-theme:
+    'JetBrains Mono', 'Fira Code', 'Cascadia Mono', 'Menlo', 'Consolas',
+    monospace;
+  --font-interface-theme: var(--font-text-theme);
+  --font-monospace-theme: var(--font-text-theme);
+
+  --radius-s: 0;
+  --radius-m: 0;
+  --radius-l: 0;
+  --input-radius: 0;
+  --button-radius: 0;
+  --tab-radius-active: 0;
+  --tab-radius: 0;
+
+  --terminal-neon-cyan: #1ff2ff;
+  --terminal-neon-magenta: #ff41c6;
+  --terminal-neon-yellow: #ffe45e;
+  --terminal-border-width: 1px;
+  --terminal-focus-outline-width: 2px;
+
   --ribbon-background: var(--background-secondary);
-  --input-hover-border-color: var(--interactive-accent);
-  --input-focus-border-color: var(--interactive-accent);
+  --background-modifier-border-focus: var(--terminal-neon-cyan);
+  --background-modifier-border-hover: var(--terminal-neon-magenta);
+  --input-hover-border-color: var(--terminal-neon-magenta);
+  --input-focus-border-color: var(--terminal-neon-cyan);
+  --input-focus-outline: var(--terminal-focus-outline-width) solid
+    var(--terminal-neon-cyan);
+  --text-selection: color-mix(
+    in srgb,
+    var(--terminal-neon-cyan) 30%,
+    transparent
+  );
+}
+
+body,
+.workspace,
+.workspace * {
+  font-family: var(--font-interface-theme);
+  border-radius: 0;
 }
