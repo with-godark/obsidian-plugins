@@ -4,11 +4,11 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "build": "node ./build.mjs",
+    "build": "node --env-file=../../.env ./build.mjs",
     "clean": "rm -rf dist",
-    "dev": "node ./build.mjs --watch",
-    "dev:sync": "node ./build.mjs --watch --sync",
+    "dev": "node --env-file=../../.env ./build.mjs --watch",
+    "dev:sync": "node --env-file=../../.env ./build.mjs --watch --sync",
     "lint": "stylelint \"src/**/*.css\"",
-    "sync": "node ./build.mjs --sync"
+    "sync": "node --env-file=../../.env ./build.mjs --sync"
   }
 }
