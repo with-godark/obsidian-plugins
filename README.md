@@ -81,3 +81,35 @@ The folder name must exactly match the `name` field in the theme manifest.
 ## Future packages
 
 Use `@godark/<package-name>` for workspace package names. Theme packages can live under `packages/*` and plugin packages can inherit the same root tooling later without changing the workspace structure.
+
+## Publish theme releases
+
+This repository includes GitHub Actions automation for publishing the theme from the monorepo layout.
+
+- Workflow: `.github/workflows/release-theme.yml`
+- Trigger: pushing a git tag (for example `0.2.0`)
+- Release assets: `manifest.json`, `theme.css`, and `versions.json`
+
+### Release checklist
+
+1. Update the version in `packages/terminal-theme/manifest.json`.
+2. Update `packages/terminal-theme/versions.json` by adding a new entry:
+
+   ```json
+   {
+     "0.2.0": "1.5.0"
+   }
+   ```
+
+   The key is your theme version and the value is the minimum supported Obsidian app version.
+
+3. Commit and push your changes to `main`.
+4. Create and push a tag that exactly matches `manifest.json` version:
+
+   ```bash
+   git tag -a 0.2.0 -m "0.2.0"
+   git push origin 0.2.0
+   ```
+
+5. Open GitHub Actions and wait for `Release Obsidian theme` to finish.
+6. Open the draft release in GitHub, add release notes, and publish.

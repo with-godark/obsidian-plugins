@@ -1,0 +1,59 @@
+name: Release Obsidian theme
+
+on:
+  push:
+    tags:
+      - '*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.17.1
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Validate tag matches theme version
+        run: |
+          tag="${GITHUB_REF_NAME}"
+          manifest_version="$(node -p "require('./packages/terminal-theme/manifest.json').version")"
+
+          if [ "$tag" != "$manifest_version" ]; then
+            echo "Tag ($tag) must match packages/terminal-theme/manifest.json version ($manifest_version)."
+            exit 1
+          fi
+
+      - name: Build theme
+        run: pnpm build:theme
+
+      - name: Prepare release assets
+        run: |
+          cp packages/terminal-theme/dist/manifest.json ./manifest.json
+          cp packages/terminal-theme/dist/theme.css ./theme.css
+          cp packages/terminal-theme/versions.json ./versions.json
+
+      - name: Create draft release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          tag="${GITHUB_REF_NAME}"
+
+          gh release create "$tag" \
+            --title="$tag" \
+            --generate-notes \
+            --draft \
+            manifest.json theme.css versions.json
