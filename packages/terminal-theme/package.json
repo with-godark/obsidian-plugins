@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "build": "node --env-file=../../.env ./build.mjs",
+    "build": "node ./build.mjs",
     "clean": "rm -rf dist",
     "dev": "node --env-file=../../.env ./build.mjs --watch",
     "dev:sync": "node --env-file=../../.env ./build.mjs --watch --sync",
