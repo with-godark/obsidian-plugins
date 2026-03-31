@@ -1,0 +1,14 @@
+{
+  "name": "@godark/terminal-theme",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build": "node ./build.mjs",
+    "clean": "rm -rf dist",
+    "dev": "node ./build.mjs --watch",
+    "dev:sync": "node ./build.mjs --watch --sync",
+    "lint": "stylelint \"src/**/*.css\"",
+    "sync": "node ./build.mjs --sync"
+  }
+}

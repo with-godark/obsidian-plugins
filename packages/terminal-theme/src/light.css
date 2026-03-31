@@ -1,0 +1,12 @@
+.theme-light {
+  --background-primary: #f8f4ec;
+  --background-secondary: #efe6d7;
+  --background-secondary-alt: #e2d4bd;
+  --background-modifier-border: #cfbea4;
+  --interactive-accent: #8f4e2d;
+  --interactive-accent-hover: #744025;
+  --text-normal: #2a2019;
+  --text-muted: #6d625a;
+  --titlebar-background: #e6dccb;
+  --titlebar-background-focused: #efe6d7;
+}

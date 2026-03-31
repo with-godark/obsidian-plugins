@@ -1,0 +1,10 @@
+body {
+  --font-text-theme: 'Iowan Old Style', 'Palatino Linotype', serif;
+  --font-interface-theme: 'Avenir Next', 'Segoe UI', sans-serif;
+  --radius-s: 4px;
+  --radius-m: 8px;
+  --radius-l: 12px;
+  --ribbon-background: var(--background-secondary);
+  --input-hover-border-color: var(--interactive-accent);
+  --input-focus-border-color: var(--interactive-accent);
+}

@@ -1,0 +1,12 @@
+.theme-dark {
+  --background-primary: #171515;
+  --background-secondary: #221f1f;
+  --background-secondary-alt: #2c2828;
+  --background-modifier-border: #4e4642;
+  --interactive-accent: #d48452;
+  --interactive-accent-hover: #e4a06b;
+  --text-normal: #f3ede6;
+  --text-muted: #b8aea5;
+  --titlebar-background: #1c1818;
+  --titlebar-background-focused: #221f1f;
+}

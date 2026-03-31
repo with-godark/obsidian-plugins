@@ -1,0 +1,19 @@
+.workspace-ribbon.mod-left {
+  border-right: 1px solid var(--background-modifier-border);
+}
+
+.workspace-tab-header.is-active {
+  box-shadow: inset 0 -2px 0 var(--interactive-accent);
+}
+
+.setting-item,
+.nav-file-title,
+.nav-folder-title,
+.search-result-file-title {
+  letter-spacing: 0.01em;
+}
+
+.markdown-source-view.mod-cm6 .cm-line,
+.markdown-preview-view {
+  line-height: 1.7;
+}
